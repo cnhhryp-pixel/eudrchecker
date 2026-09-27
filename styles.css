@@ -144,3 +144,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:900px){.siteFooterTop{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.siteFooterTop{grid-template-columns:1fr}.siteFooterBottom{flex-direction:column}.enterpriseDialog{width:calc(100% - 20px);max-height:calc(100vh - 20px)}.enterpriseDialogCard{padding:22px 18px}}
 @media print{.siteFooter{display:none!important}}
+
+/* Enterprise form refinement */
+.enterpriseForm .contactFormGrid{align-items:start}
+.enterpriseForm .contactFormGrid label{margin-bottom:16px}
+.enterpriseForm>label{margin-top:4px}
+.enterpriseForm .contactHoney{display:none!important;min-height:0!important;margin:0!important;padding:0!important}
