@@ -1,6 +1,11 @@
 (()=>{const inp=document.getElementById("geoInput"),out=document.getElementById("geoResult"),go=document.getElementById("validateGeo"),ex=document.getElementById("loadGeoExample"),clr=document.getElementById("clearGeo");if(!inp||!out)return;
 const example={"type":"FeatureCollection","features":[{"type":"Feature","properties":{"plot_id":"example-1"},"geometry":{"type":"Polygon","coordinates":[[[12.4001,45.6001],[12.5001,45.6001],[12.5001,45.7001],[12.4001,45.6001]]]}}]};
-ex.onclick=()=>{inp.value=JSON.stringify(example,null,2)};clr.onclick=()=>{inp.value="";out.innerHTML='<div class="empty"><b>Your validation result will appear here</b></div>'};go.onclick=validate;
+ex.onclick=()=>{inp.value=JSON.stringify(example,null,2)};
+clr.onclick=()=>{
+  inp.value="";
+  out.innerHTML='<div class="geoEmpty"><span class="geoEmptyIcon">✓</span><div class="eyebrow">Ready to validate</div><h3>Your validation result will appear here</h3><p>Paste GeoJSON and click <b>Validate GeoJSON</b>.</p><div class="geoCheckList"><span>JSON syntax</span><span>Coordinate ranges</span><span>Polygon closure</span><span>Supported geometry types</span></div></div>';
+};
+go.onclick=validate;
 function validate(){let obj;try{obj=JSON.parse(inp.value)}catch(e){return show(false,["Invalid JSON: "+e.message],[])}let errors=[],warn=[],stats={features:0,points:0,polygons:0,multiPolygons:0,maxDecimals:0};const geometries=[];
 if(obj.type==="FeatureCollection"){if(!Array.isArray(obj.features))errors.push("FeatureCollection.features must be an array.");else{stats.features=obj.features.length;obj.features.forEach((f,i)=>{if(!f||f.type!=="Feature")errors.push("Feature "+(i+1)+" is not a valid GeoJSON Feature.");else if(!f.geometry)warn.push("Feature "+(i+1)+" has no geometry.");else geometries.push({g:f.geometry,label:"Feature "+(i+1)})})}}
 else if(obj.type==="Feature"){stats.features=1;if(!obj.geometry)errors.push("Feature has no geometry.");else geometries.push({g:obj.geometry,label:"Feature"})}
