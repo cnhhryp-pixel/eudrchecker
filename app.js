@@ -64,3 +64,26 @@
     }
   });
 })();
+;(()=>{
+  const footer=document.querySelector("footer");
+  if(!footer||document.querySelector(".globalLinkGrid")) return;
+  const path=location.pathname;
+  const grid=document.createElement("div");
+  grid.className="wrap globalLinkGrid";
+  grid.innerHTML=
+    '<div><b>Free tools</b><a href="/#checker">EUDR Checker</a><a href="/product-checker/">CN / Product Checker</a><a href="/country-risk/">Country Risk Lookup</a><a href="/geojson-validator/">GeoJSON Validator</a><a href="/supplier-checklist/">Supplier Checklist</a></div>'+
+    '<div><b>Scope & reference</b><a href="/cn-code/">CN Code Index</a><a href="/commodities/">7 Commodities</a><a href="/deadlines/">EUDR Deadlines</a><a href="/glossary/">EUDR Glossary</a></div>'+
+    '<div><b>Popular guides</b><a href="/guides/eudr-basics/">EUDR Basics</a><a href="/guides/eudr-for-importers/">For Importers</a><a href="/guides/eudr-for-non-eu-suppliers/">For Non-EU Suppliers</a><a href="/guides/eudr-geolocation-requirements/">Geolocation Requirements</a><a href="/guides/eudr-dds/">DDS Guide</a></div>'+
+    '<div><b>Reports</b><a href="/report/">Generate EUDR Report</a><a href="/professional-report-sample/">Professional Sample</a><a href="/pricing/">Pricing</a><a href="/about/">About EUDRChecker</a></div>';
+  const copy=footer.querySelector(".copy");
+  if(copy) footer.insertBefore(grid,copy);
+  else footer.prepend(grid);
+
+  const detailContent=(path.startsWith("/guides/")&&path!=="/guides/")||(path.startsWith("/cn-code/")&&path!=="/cn-code/")||(path.startsWith("/commodities/")&&path!=="/commodities/");
+  if(detailContent&&!document.querySelector(".globalReportCta")){
+    const cta=document.createElement("section");
+    cta.className="globalReportCta";
+    cta.innerHTML='<div class="wrap globalReportInner"><div><span>Need a structured output?</span><b>Turn this research into an EUDR report.</b></div><div><a class="btn secondary" href="/professional-report-sample/">View sample</a><a class="btn primary" href="/report/">Generate report</a></div></div>';
+    footer.insertAdjacentElement("beforebegin",cta);
+  }
+})();
