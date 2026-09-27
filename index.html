@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EUDR Checker — Free EU Deforestation Regulation Screening Tool</title>
+<meta name="description" content="Free preliminary EUDR checker for commodity scope, company role, country risk and current compliance deadlines.">
+<link rel="canonical" href="https://eudrchecker.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<meta name="theme-color" content="#103d2d">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"EUDR Checker","url":"https://eudrchecker.com/","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}</script>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="brand" href="/"><span class="logo">EC</span><span><b>EUDR</b>Checker</span></a>
+<button id="menuBtn">Menu</button>
+<nav id="nav"><a href="#checker">Checker</a><a href="#scope">Scope</a><a href="#risk">Country Risk</a><a href="#deadlines">Deadlines</a><a href="#faq">FAQ</a></nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap heroGrid">
+<div>
+<div class="eyebrow">EU Deforestation Regulation • Free screening tool</div>
+<h1>Check your EUDR exposure in minutes.</h1>
+<p class="lead">Screen your commodity, supply-chain role, country of production and application date — then get a practical next-step checklist.</p>
+<div class="actions"><a class="btn primary" href="#checker">Start free check</a><a class="btn secondary" href="#scope">Understand the scope</a></div>
+<div class="trust"><span>✓ No signup</span><span>✓ Runs in your browser</span><span>✓ Current 2026 timetable</span></div>
+</div>
+<aside class="dateCard">
+<small>KEY APPLICATION DATES</small>
+<div><strong>30 Dec 2026</strong><span>Large & medium operators</span></div>
+<div><strong>30 Jun 2027</strong><span>Most micro & small operators</span></div>
+<p>Some micro/small operators already covered by EUTR follow 30 Dec 2026. Certain products added in 2026 have a later application date.</p>
+</aside>
+</div></section>
+
+<section class="section" id="checker"><div class="wrap">
+<div class="sectionHead"><div class="eyebrow">Free tool</div><h2>EUDR Preliminary Checker</h2><p>Use this for an initial screening. A definitive product-scope decision still requires checking the current Annex I CN code.</p></div>
+<div class="checker">
+<form id="form">
+<label>1. Relevant commodity
+<select id="commodity" required><option value="">Select</option><option>Cattle</option><option>Cocoa</option><option>Coffee</option><option>Oil palm</option><option>Rubber</option><option>Soy</option><option>Wood</option><option value="Unsure">Not sure / derived product</option></select>
+</label>
+<label>2. Your role
+<select id="role" required><option value="">Select</option><option value="operator">Operator / first placer</option><option value="importer">EU importer / first placer</option><option value="exporter">EU exporter</option><option value="trader">Downstream trader</option><option value="supplier">Non-EU producer / supplier</option><option value="unsure">Not sure</option></select>
+</label>
+<label>3. Country of production
+<select id="country" required><option value="">Select</option><option value="low">China — Low risk</option><option value="low">India — Low risk</option><option value="standard">Brazil — Standard risk</option><option value="standard">Indonesia — Standard risk</option><option value="standard">Malaysia — Standard risk</option><option value="standard">Vietnam — Standard risk</option><option value="standard">Côte d'Ivoire — Standard risk</option><option value="standard">Ghana — Standard risk</option><option value="high">Belarus — High risk</option><option value="high">Myanmar — High risk</option><option value="high">Russia — High risk</option><option value="unknown">Other / check official list</option></select>
+</label>
+<label>4. Company size / category
+<select id="size" required><option value="">Select</option><option value="large">Large or medium</option><option value="small-eutr">Micro/small already covered by EUTR</option><option value="small">Other micro or small enterprise</option><option value="unsure">Not sure</option></select>
+</label>
+<label>Product or CN/HS description <span class="optional">(optional)</span>
+<input id="product" placeholder="e.g. roasted coffee, rubber tyres, wooden furniture">
+</label>
+<label class="check"><input id="newScope" type="checkbox"> This may be a product newly added to EUDR scope in the 2026 update</label>
+<button class="btn primary full" type="submit">Check EUDR exposure</button>
+</form>
+<div id="result" class="result"><div class="empty"><b>Your result will appear here</b><p>Complete the four required fields to get a preliminary action path.</p></div></div>
+</div>
+</div></section>
+
+<section class="section soft" id="scope"><div class="wrap">
+<div class="sectionHead"><div class="eyebrow">Product scope</div><h2>Seven core commodities. Many derived products.</h2><p>EUDR applies to specified products associated with seven commodities. Product scope is determined by Annex I and CN codes, so the commodity match is only step one.</p></div>
+<div class="cards">
+<article><span>01</span><h3>Cattle</h3><p>Live cattle and specified derived products.</p></article>
+<article><span>02</span><h3>Cocoa</h3><p>Cocoa and specified cocoa products.</p></article>
+<article><span>03</span><h3>Coffee</h3><p>Coffee and specified coffee products.</p></article>
+<article><span>04</span><h3>Oil palm</h3><p>Palm oil and specified derivatives.</p></article>
+<article><span>05</span><h3>Rubber</h3><p>Natural rubber and specified products.</p></article>
+<article><span>06</span><h3>Soy</h3><p>Soya and specified soy products.</p></article>
+<article><span>07</span><h3>Wood</h3><p>Wood, paper and specified derived products.</p></article>
+</div>
+</div></section>
+
+<section class="section" id="risk"><div class="wrap split">
+<div><div class="eyebrow">Country benchmarking</div><h2>Country risk changes the due-diligence path.</h2><p class="lead2">The Commission classifies countries as low, standard or high risk. Low-risk sourcing can allow simplified due diligence when all legal conditions are met; it does not mean “no obligations.”</p></div>
+<div class="riskBox">
+<div><span class="pill low">Low risk</span><p>Potential simplified due diligence when conditions are met.</p></div>
+<div><span class="pill standard">Standard risk</span><p>Full risk-assessment workflow may be required.</p></div>
+<div><span class="pill high">High risk</span><p>Higher scrutiny and enhanced compliance attention.</p></div>
+<a href="https://green-forum.ec.europa.eu/countries-and-partnerships/country-classification-list_en" target="_blank" rel="noopener">Verify official country classification ↗</a>
+</div>
+</div></section>
+
+<section class="section dark" id="deadlines"><div class="wrap">
+<div class="sectionHead"><div class="eyebrow">Current timetable</div><h2>EUDR deadlines to plan around</h2></div>
+<div class="deadlineGrid">
+<div><strong>30 Dec 2026</strong><p>Large and medium operators.</p></div>
+<div><strong>30 Dec 2026</strong><p>Micro/small operators already covered by EUTR.</p></div>
+<div><strong>30 Jun 2027</strong><p>Most other micro and small operators.</p></div>
+<div><strong>30 Dec 2027</strong><p>Certain products newly added by the 2026 scope update.</p></div>
+</div>
+<a class="sourceLink" href="https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en" target="_blank" rel="noopener">European Commission EUDR overview ↗</a>
+</div></section>
+
+<section class="section"><div class="wrap split">
+<div><div class="eyebrow">Roadmap</div><h2>Built as an EUDR toolkit, not a one-page quiz.</h2></div>
+<div class="roadmap">
+<div><b>LIVE</b><span><strong>Preliminary EUDR Checker</strong>Commodity + role + origin risk + deadline.</span></div>
+<div><b>NEXT</b><span><strong>CN Code Checker</strong>Product-level Annex I screening.</span></div>
+<div><b>NEXT</b><span><strong>GeoJSON Validator</strong>Check plot geometry before DDS preparation.</span></div>
+<div><b>NEXT</b><span><strong>Professional EUDR Report</strong>Evidence checklist, findings and exportable report.</span></div>
+</div>
+</div></section>
+
+<section class="section soft" id="faq"><div class="wrap narrow">
+<div class="sectionHead"><div class="eyebrow">FAQ</div><h2>Common EUDR questions</h2></div>
+<details><summary>Does choosing one of the seven commodities mean my product is definitely covered?</summary><p>No. The current Annex I product/CN-code list determines legal product scope.</p></details>
+<details><summary>Does low-risk origin mean there is no due diligence?</summary><p>No. Simplified due diligence can apply when legal conditions are met, but relevant information still has to be collected.</p></details>
+<details><summary>What about non-EU suppliers?</summary><p>EU customers may still require geolocation, legality and traceability evidence from non-EU producers and suppliers.</p></details>
+<details><summary>Is this legal advice?</summary><p>No. EUDRChecker is a preliminary compliance aid. Verify current EU legislation, guidance and your transaction facts.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap footerGrid">
+<div><a class="brand" href="/"><span class="logo">EC</span><span><b>EUDR</b>Checker</span></a><p>Independent practical EUDR screening tools.</p></div>
+<div><b>Official sources</b><a href="https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en" target="_blank">EU regulation overview ↗</a><a href="https://green-forum.ec.europa.eu/countries-and-partnerships/country-classification-list_en" target="_blank">Country classification ↗</a></div>
+</div><div class="wrap copy">© 2026 EUDRChecker.com. Independent tool; not affiliated with the European Commission.</div></footer>
+<script src="/app.js"></script>
+</body></html>
