@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verify PayPal Payment | EUDR Professional Report</title>
+<meta name="description" content="Submit PayPal Transaction ID and payer email to request verification for the EUDR Professional Compliance Report.">
+<link rel="canonical" href="https://eudrchecker.com/payment-verification/"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css">
+</head><body>
+<header class="top"><div class="wrap nav">
+<a class="brand" href="/"><span class="logo">EC</span><span><b>EUDR</b>Checker</span></a>
+<button id="menuBtn">Menu</button>
+<nav id="nav"><a href="/report/">Report</a><a href="/pricing/">Pricing</a><a href="/payment-verification/">Verify Payment</a></nav>
+</div></header>
+<main>
+<section class="hero compactHero"><div class="wrap"><div class="eyebrow">Professional report</div><h1>Verify your PayPal payment</h1><p class="lead">Already paid €49? Submit your PayPal Transaction ID and payer email so your Professional Report purchase can be checked.</p></div></section>
+
+<section class="section"><div class="wrap verifyGrid">
+<form id="verifyForm" class="reportForm">
+<div class="formSection"><h3>Payment details</h3>
+<label>PayPal Transaction ID<input id="txId" placeholder="Example: 7AB12345CD678901E" autocomplete="off" required></label>
+<label>Payer email<input id="payerEmail" type="email" placeholder="name@example.com" required></label>
+<label>Payer name <span class="optional">(optional)</span><input id="payerName" placeholder="Name shown on PayPal"></label>
+</div>
+<div class="formSection"><h3>Report details</h3>
+<label>Company name<input id="verifyCompany" required placeholder="Example Trading GmbH"></label>
+<label>Product / report subject<input id="verifyProduct" required placeholder="e.g. roasted coffee / CN 0901"></label>
+<label>Notes <span class="optional">(optional)</span><textarea id="verifyNotes" placeholder="Anything that helps match the payment or report request"></textarea></label>
+</div>
+<label class="check"><input id="verifyConfirm" type="checkbox" required> I confirm that I completed the €49 PayPal payment for the EUDR Professional Compliance Report.</label>
+<button class="btn primary full" type="submit">Create verification request</button>
+</form>
+
+<aside class="reportSide">
+<div class="priceCard"><div class="eyebrow">What happens next</div>
+<ol class="verifySteps"><li>Enter the Transaction ID from PayPal.</li><li>Use the same payer email used for payment.</li><li>Create the verification request.</li><li>Send or copy the request for manual verification.</li><li>Professional report access is provided after the payment is confirmed.</li></ol>
+<a class="btn secondary full" href="https://www.paypal.com/ncp/payment/MJPYCETXV9CHA" target="_blank" rel="noopener">Pay €49 with PayPal</a>
+<p class="toolDisclaimer">This static website does not query PayPal servers and cannot automatically confirm whether a transaction is genuine.</p>
+</div>
+</aside>
+</div></section>
+
+<section class="section soft"><div class="wrap">
+<div id="verifyOutput" class="verifyOutput"><div class="empty"><b>Your verification request will appear here</b><p>No payment data is sent automatically by this page.</p></div></div>
+</div></section>
+</main>
+<footer><div class="wrap copy">© 2026 EUDRChecker.com. Manual verification workflow.</div></footer>
+<script src="/app.js"></script><script src="/payment-config.js"></script><script src="/payment-verification.js"></script>
+</body></html>
