@@ -1,0 +1,28 @@
+name: Sitemap Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  sitemap-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Generate sitemap
+        run: node scripts/generate-sitemap.mjs
+      - name: Verify sitemap is committed
+        run: |
+          if ! git diff --quiet -- sitemap.xml; then
+            echo "sitemap.xml is out of date. Run: node scripts/generate-sitemap.mjs"
+            git diff -- sitemap.xml
+            exit 1
+          fi
