@@ -51,12 +51,9 @@
       <input type="hidden" name="_subject" value="EUDRChecker Enterprise Inquiry">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_url" value="https://eudrchecker.com/pricing/">
-      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="contactHoney">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="contactHoney" aria-hidden="true" style="display:none!important">
 
       <div class="contactFormGrid">
-        <label>Your name
-          <input type="text" name="name" autocomplete="name" required placeholder="Your name">
-        </label>
         <label>Company
           <input type="text" name="company" autocomplete="organization" required placeholder="Company name">
         </label>
@@ -118,7 +115,7 @@
   openBtn.addEventListener("click",()=>{
     if(typeof dialog.showModal==="function") dialog.showModal();
     else dialog.setAttribute("open","");
-    setTimeout(()=>form.querySelector('input[name="name"]')?.focus(),30);
+    setTimeout(()=>form.querySelector('input[name="company"]')?.focus(),30);
   });
 
   closeBtn?.addEventListener("click",()=>dialog.close());
