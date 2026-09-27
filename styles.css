@@ -92,3 +92,18 @@
 .ctaNote{margin-top:14px!important;color:#9fbeaf!important;font-size:11px!important}
 @media(max-width:900px){.productFinalCta .split{grid-template-columns:1fr;gap:28px}}
 @media(max-width:680px){.productNextActions{display:grid;grid-template-columns:1fr}.productNextActions .btn{width:100%;min-width:0}.ctaHelperLinks{flex-direction:column;gap:8px}}
+
+/* GeoJSON Validator layout refinement */
+.geoGrid{align-items:start}
+.geoInput textarea{min-height:430px}
+.geoResultPanel{min-height:430px;display:flex;align-items:stretch}
+.geoResultPanel>.geoEmpty{width:100%;min-height:428px}
+.geoEmpty{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:34px;color:var(--muted)}
+.geoEmptyIcon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--g);font-size:18px;font-weight:900;margin-bottom:14px}
+.geoEmpty h3{color:var(--ink);font-size:20px;letter-spacing:-.5px;margin-bottom:8px}
+.geoEmpty p{margin:0 0 18px}
+.geoCheckList{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:min(100%,360px)}
+.geoCheckList span{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-size:11px;font-weight:800;color:#617168}
+.geoInput .actions{margin-top:18px}
+@media(max-width:900px){.geoResultPanel{min-height:330px}.geoResultPanel>.geoEmpty{min-height:328px}}
+@media(max-width:560px){.geoCheckList{grid-template-columns:1fr}.geoInput textarea{min-height:330px}}
