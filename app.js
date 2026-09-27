@@ -53,3 +53,14 @@
   }
   function escapeBread(v){return v.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
 })();
+;(()=>{
+  const nav=document.getElementById("nav");
+  if(!nav) return;
+  const additions=[["/cn-code/","CN Codes"],["/report/","Report"]];
+  additions.forEach(([href,label])=>{
+    if(!nav.querySelector('a[href="'+href+'"]')){
+      const a=document.createElement("a");
+      a.href=href;a.textContent=label;nav.appendChild(a);
+    }
+  });
+})();
