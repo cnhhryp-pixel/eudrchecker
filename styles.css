@@ -107,3 +107,7 @@
 .geoInput .actions{margin-top:18px}
 @media(max-width:900px){.geoResultPanel{min-height:330px}.geoResultPanel>.geoEmpty{min-height:328px}}
 @media(max-width:560px){.geoCheckList{grid-template-columns:1fr}.geoInput textarea{min-height:330px}}
+
+.skipLink{position:fixed;left:14px;top:-60px;z-index:9999;background:#fff;color:var(--g);border:2px solid var(--g);border-radius:10px;padding:10px 14px;font-weight:850;box-shadow:var(--shadow)}
+.skipLink:focus{top:14px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid rgba(27,90,67,.35);outline-offset:3px}
