@@ -38,3 +38,6 @@
 @media(max-width:900px){.seoLayout{grid-template-columns:1fr}.articleSide{position:static}.quickFacts{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.quickFacts{grid-template-columns:1fr}}
 
 .guideCluster{margin-top:56px}.guideLinks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.guideLinks a{border:1px solid var(--line);background:#fff;border-radius:13px;padding:13px 14px;font-weight:800;color:var(--g2)}.guideLinks a:hover{box-shadow:var(--shadow);transform:translateY(-1px)}@media(max-width:800px){.guideLinks{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.guideLinks{grid-template-columns:1fr}}
+
+.cnCodeHero{font-feature-settings:"tnum" 1}.cnBadge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 11px;background:#fff;font-weight:800}.cnCodeGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cnCodeGrid a{border:1px solid var(--line);border-radius:13px;padding:14px;background:#fff;font-weight:800;color:var(--g2)}
+@media(max-width:780px){.cnCodeGrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.cnCodeGrid{grid-template-columns:1fr}}
