@@ -7,8 +7,24 @@
 <section class="hero compactHero"><div class="wrap"><div class="eyebrow">Geolocation tool</div><h1>EUDR GeoJSON Validator</h1><p class="lead">Paste a GeoJSON Feature, FeatureCollection, Point, Polygon or MultiPolygon. The validator checks syntax, coordinate bounds, polygon closure and common EUDR preparation issues — entirely in your browser.</p></div></section>
 <section class="section"><div class="wrap geoGrid">
 <div class="geoInput"><label for="geoInput">Paste GeoJSON</label><textarea id="geoInput" spellcheck="false" placeholder='{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[12.4,45.6],[12.5,45.6],[12.5,45.7],[12.4,45.6]]]},"properties":{}}'></textarea><div class="actions"><button id="validateGeo" class="btn primary">Validate GeoJSON</button><button id="loadGeoExample" class="btn secondary">Load example</button><button id="clearGeo" class="btn secondary">Clear</button></div><p class="toolDisclaimer">No upload: validation runs locally in your browser.</p></div>
-<div id="geoResult" class="scopeResult"><div class="empty"><b>Your validation result will appear here</b><p>Paste GeoJSON and click Validate.</p></div></div>
+<div id="geoResult" class="scopeResult geoResultPanel">
+  <div class="geoEmpty">
+    <span class="geoEmptyIcon">✓</span>
+    <div class="eyebrow">Ready to validate</div>
+    <h3>Your validation result will appear here</h3>
+    <p>Paste GeoJSON and click <b>Validate GeoJSON</b>.</p>
+    <div class="geoCheckList">
+      <span>JSON syntax</span>
+      <span>Coordinate ranges</span>
+      <span>Polygon closure</span>
+      <span>Supported geometry types</span>
+    </div>
+  </div>
+</div>
 </div></section>
-<section class="section soft"><div class="wrap split"><div><div class="eyebrow">EUDR geolocation notes</div><h2>Geometry type matters.</h2></div><div><p>For non-cattle commodities, production plots larger than four hectares generally require polygon geolocation rather than a single point. For cattle, geolocation relates to establishments where cattle were kept. The validator checks geometry quality, but it cannot determine whether your supplied geometry represents the legally correct plot or establishment.</p><p><a class="btn primary" href="https://green-forum.ec.europa.eu/nature-and-biodiversity/deforestation-regulation-implementation_en" target="_blank" rel="noopener">Review official EUDR guidance ↗</a></p></div></div></section>
+<section class="section soft"><div class="wrap split"><div><div class="eyebrow">EUDR geolocation notes</div><h2>Geometry type matters.</h2></div><div><p>For non-cattle commodities, production plots larger than four hectares generally require polygon geolocation rather than a single point. For cattle, geolocation relates to establishments where cattle were kept. The validator checks geometry quality, but it cannot determine whether your supplied geometry represents the legally correct plot or establishment.</p><div class="actions">
+  <a class="btn primary" href="https://green-forum.ec.europa.eu/nature-and-biodiversity/deforestation-regulation-implementation_en" target="_blank" rel="noopener">Review official EUDR guidance ↗</a>
+  <a class="btn secondary" href="/report/">Generate EUDR Report</a>
+</div></div></div></section>
 </main><footer><div class="wrap copy">© 2026 EUDRChecker.com. Preliminary validation only.</div></footer>
 <script src="/app.js"></script><script src="/geojson-validator.js"></script></body></html>
