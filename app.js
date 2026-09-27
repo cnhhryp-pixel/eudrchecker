@@ -103,3 +103,4 @@
       '<span class="siteFooterLegal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></span>'+
     '</div>';
 })();
+;window.FOOTER_BUILD_20260927_2=true;
