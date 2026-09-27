@@ -165,3 +165,5 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:900px){.siteFooterNav{grid-template-columns:1fr 1fr;gap:32px 42px}}
 @media(max-width:560px){.siteFooterNav{grid-template-columns:1fr;gap:26px}.siteFooterBottom{flex-direction:column;align-items:flex-start}}
 @media print{.siteFooter{display:none!important}}
+
+/* FOOTER BUILD 20260927-2 */
