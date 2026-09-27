@@ -1,3 +1,3 @@
 window.EUDR_PAYMENT = {
-  professionalReport: ""
+  professionalReport: "https://www.paypal.com/ncp/payment/MJPYCETXV9CHA"
 };
