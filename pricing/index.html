@@ -40,35 +40,34 @@
 <details><summary>Is this legal advice?</summary><p>No. EUDRChecker provides compliance-support tools and reports. It does not provide legal advice or certify EUDR compliance.</p></details>
 </div></section>
 
-<div id="enterpriseModal" class="contactModal" aria-hidden="true">
-  <div class="contactModalBackdrop" data-close-modal></div>
-  <div class="contactModalCard" role="dialog" aria-modal="true" aria-labelledby="enterpriseModalTitle">
-    <button class="contactModalClose" type="button" aria-label="Close contact form" data-close-modal>×</button>
+<dialog id="enterpriseModal" class="enterpriseDialog" aria-labelledby="enterpriseModalTitle">
+  <div class="enterpriseDialogCard">
+    <button class="contactModalClose" type="button" aria-label="Close contact form" id="enterpriseModalClose">×</button>
     <div class="eyebrow">Enterprise inquiry</div>
     <h2 id="enterpriseModalTitle">Tell us about your EUDR project.</h2>
     <p class="contactModalLead">For multi-product, multi-supplier or custom EUDR workflows. We will review your requirements and reply by email.</p>
 
-    <form class="enterpriseForm" action="https://formsubmit.co/cnhhryp@gmail.com" method="POST">
+    <form id="enterpriseForm" class="enterpriseForm">
       <input type="hidden" name="_subject" value="EUDRChecker Enterprise Inquiry">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://eudrchecker.com/pricing/?inquiry=sent">
+      <input type="hidden" name="_url" value="https://eudrchecker.com/pricing/">
       <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="contactHoney">
 
       <div class="contactFormGrid">
         <label>Your name
-          <input type="text" name="Name" autocomplete="name" required placeholder="Your name">
+          <input type="text" name="name" autocomplete="name" required placeholder="Your name">
         </label>
         <label>Company
-          <input type="text" name="Company" autocomplete="organization" required placeholder="Company name">
+          <input type="text" name="company" autocomplete="organization" required placeholder="Company name">
         </label>
         <label>Work email
-          <input type="email" name="Email" autocomplete="email" required placeholder="name@company.com">
+          <input type="email" name="email" autocomplete="email" required placeholder="name@company.com">
         </label>
         <label>Country / region
-          <input type="text" name="Country / Region" autocomplete="country-name" placeholder="Country or region">
+          <input type="text" name="country_region" autocomplete="country-name" placeholder="Country or region">
         </label>
         <label>Company role
-          <select name="Company Role" required>
+          <select name="company_role" required>
             <option value="">Select</option>
             <option>EU importer / operator</option>
             <option>EU exporter</option>
@@ -79,7 +78,7 @@
           </select>
         </label>
         <label>Estimated scope
-          <select name="Project Scope" required>
+          <select name="project_scope" required>
             <option value="">Select</option>
             <option>1–10 products / suppliers</option>
             <option>11–50 products / suppliers</option>
@@ -90,19 +89,78 @@
       </div>
 
       <label>What do you need help with?
-        <textarea name="Project Details" required placeholder="Tell us about your products, suppliers, countries, current data and the result you need."></textarea>
+        <textarea name="message" required placeholder="Tell us about your products, suppliers, countries, current data and the result you need."></textarea>
       </label>
 
       <label class="check contactConsent">
         <input type="checkbox" required>
-        <span>I agree that the information in this form may be used to reply to my inquiry. See the <a href="/privacy/" target="_blank">Privacy Policy</a>.</span>
+        <span>I agree that the information in this form may be used to reply to my inquiry. See the <a href="/privacy/" target="_blank" rel="noopener">Privacy Policy</a>.</span>
       </label>
 
-      <button class="btn primary full contactSubmit" type="submit">Send Enterprise inquiry</button>
-      <p class="toolDisclaimer">Your inquiry will be sent to cnhhryp@gmail.com. Please do not include passwords, card details or other sensitive payment information.</p>
+      <button id="enterpriseSubmit" class="btn primary full contactSubmit" type="submit">Send Enterprise inquiry</button>
+      <div id="enterpriseFormStatus" class="enterpriseFormStatus" aria-live="polite"></div>
+      <p class="toolDisclaimer">Your inquiry is sent to cnhhryp@gmail.com through FormSubmit. Please do not include passwords, card details or other sensitive payment information.</p>
     </form>
   </div>
-</div>
+</dialog>
 </main>
 <footer><div class="wrap copy">© 2026 EUDRChecker.com.</div></footer>
-<script src="/app.js"></script><script src="/payment-config.js"></script><script src="/enterprise-contact.js"></script><script>const p=(window.EUDR_PAYMENT||{}).professionalReport||"";if(p){const a=document.getElementById("pricingPaypal");a.href=p;a.classList.remove("disabledLink");document.getElementById("pricingStatus").textContent="Secure payment via PayPal Payment Link."}else{document.getElementById("pricingPaypal").onclick=e=>e.preventDefault()}</script></body></html>
+<script src="/app.js"></script><script src="/payment-config.js"></script><script>const p=(window.EUDR_PAYMENT||{}).professionalReport||"";if(p){const a=document.getElementById("pricingPaypal");a.href=p;a.classList.remove("disabledLink");document.getElementById("pricingStatus").textContent="Secure payment via PayPal Payment Link."}else{document.getElementById("pricingPaypal").onclick=e=>e.preventDefault()}</script><script>
+(()=>{
+  const openBtn=document.getElementById("enterpriseContact");
+  const dialog=document.getElementById("enterpriseModal");
+  const closeBtn=document.getElementById("enterpriseModalClose");
+  const form=document.getElementById("enterpriseForm");
+  const submit=document.getElementById("enterpriseSubmit");
+  const status=document.getElementById("enterpriseFormStatus");
+  if(!openBtn||!dialog||!form) return;
+
+  openBtn.addEventListener("click",()=>{
+    if(typeof dialog.showModal==="function") dialog.showModal();
+    else dialog.setAttribute("open","");
+    setTimeout(()=>form.querySelector('input[name="name"]')?.focus(),30);
+  });
+
+  closeBtn?.addEventListener("click",()=>dialog.close());
+  dialog.addEventListener("click",e=>{
+    const rect=dialog.getBoundingClientRect();
+    const inside=e.clientX>=rect.left&&e.clientX<=rect.right&&e.clientY>=rect.top&&e.clientY<=rect.bottom;
+    if(!inside) dialog.close();
+  });
+
+  form.addEventListener("submit",async e=>{
+    e.preventDefault();
+    if(!form.reportValidity()) return;
+    submit.disabled=true;
+    submit.textContent="Sending…";
+    status.className="enterpriseFormStatus";
+    status.textContent="Sending your inquiry…";
+
+    const data=Object.fromEntries(new FormData(form).entries());
+    try{
+      const res=await fetch("https://formsubmit.co/ajax/cnhhryp@gmail.com",{
+        method:"POST",
+        headers:{"Content-Type":"application/json","Accept":"application/json"},
+        body:JSON.stringify(data)
+      });
+      const json=await res.json().catch(()=>({}));
+      if(!res.ok || json.success===false) throw new Error(json.message||"Unable to submit the form.");
+
+      status.className="enterpriseFormStatus success";
+      status.innerHTML="<b>Inquiry submitted.</b><span>Thank you. We will review your project and reply by email.</span>";
+      form.reset();
+      submit.textContent="Sent";
+      setTimeout(()=>{ submit.disabled=false; submit.textContent="Send Enterprise inquiry"; },2500);
+    }catch(err){
+      status.className="enterpriseFormStatus error";
+      status.innerHTML="<b>Submission needs attention.</b><span>"+escapeHtml(err.message||"Please try again or email us directly.")+"</span>";
+      submit.disabled=false;
+      submit.textContent="Send Enterprise inquiry";
+    }
+  });
+
+  function escapeHtml(v){
+    return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+  }
+})();
+</script></body></html>
