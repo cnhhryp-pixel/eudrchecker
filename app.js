@@ -87,3 +87,33 @@
     footer.insertAdjacentElement("beforebegin",cta);
   }
 })();
+;(()=>{
+  const header=document.querySelector(".top");
+  const nav=document.getElementById("nav");
+  const btn=document.getElementById("menuBtn");
+  if(!header||!nav) return;
+
+  const current=location.pathname;
+  nav.querySelectorAll("a").forEach(a=>{
+    const href=a.getAttribute("href")||"";
+    const target=href.split("#")[0];
+    const active=(target==="/"&&current==="/")||(target&&target!=="/"&&current.startsWith(target));
+    if(active) a.classList.add("active");
+    if(target==="/report/") a.classList.add("navCta");
+  });
+
+  if(btn){
+    btn.setAttribute("aria-controls","nav");
+    if(!btn.hasAttribute("aria-expanded")) btn.setAttribute("aria-expanded","false");
+    const close=()=>{nav.classList.remove("open");btn.setAttribute("aria-expanded","false");document.body.classList.remove("menuOpen")};
+    const open=()=>{nav.classList.add("open");btn.setAttribute("aria-expanded","true");document.body.classList.add("menuOpen")};
+    btn.onclick=()=>nav.classList.contains("open")?close():open();
+    nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",close));
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+    document.addEventListener("click",e=>{if(nav.classList.contains("open")&&!header.contains(e.target))close()});
+  }
+
+  const onScroll=()=>header.classList.toggle("scrolled",window.scrollY>8);
+  onScroll();
+  window.addEventListener("scroll",onScroll,{passive:true});
+})();
