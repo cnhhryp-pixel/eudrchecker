@@ -117,3 +117,14 @@
   onScroll();
   window.addEventListener("scroll",onScroll,{passive:true});
 })();
+;(()=>{
+  if(!document.querySelector(".skipLink")){
+    const a=document.createElement("a");
+    a.className="skipLink";
+    a.href="#main-content";
+    a.textContent="Skip to main content";
+    document.body.prepend(a);
+  }
+  const main=document.querySelector("main");
+  if(main&&!main.id) main.id="main-content";
+})();
