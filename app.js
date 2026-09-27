@@ -128,3 +128,16 @@
   const main=document.querySelector("main");
   if(main&&!main.id) main.id="main-content";
 })();
+;(()=>{
+  const footer=document.querySelector("footer");
+  if(!footer) return;
+  footer.className="siteFooter";
+  footer.innerHTML=
+    '<div class="wrap siteFooterTop">'+
+      '<div class="siteFooterBrand"><a class="brand" href="/"><span class="logo">EC</span><span><b>EUDR</b>Checker</span></a><p>Independent EUDR screening tools, product-scope references and practical compliance-support reports.</p></div>'+
+      '<div><b>Free tools</b><a href="/#checker">EUDR Checker</a><a href="/product-checker/">CN / Product Checker</a><a href="/country-risk/">Country Risk Lookup</a><a href="/geojson-validator/">GeoJSON Validator</a><a href="/supplier-checklist/">Supplier Checklist</a></div>'+
+      '<div><b>Scope & reference</b><a href="/cn-code/">CN Code Index</a><a href="/commodities/">7 Commodities</a><a href="/deadlines/">EUDR Deadlines</a><a href="/glossary/">EUDR Glossary</a><a href="/guides/">All Guides</a></div>'+
+      '<div><b>Reports & support</b><a href="/report/">Generate EUDR Report</a><a href="/professional-report-sample/">Professional Sample</a><a href="/pricing/">Pricing</a><a href="/about/">About EUDRChecker</a></div>'+
+    '</div>'+
+    '<div class="wrap siteFooterBottom"><span>© 2026 EUDRChecker.com. Preliminary compliance-support tools; not legal advice.</span><span><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></span></div>';
+})();
