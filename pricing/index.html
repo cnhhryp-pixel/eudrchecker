@@ -14,7 +14,7 @@
 <section class="section"><div class="wrap"><div class="pricingIntro"><div class="eyebrow">No subscription required</div><h2>Use every core tool free. Upgrade only when you need a structured Professional report.</h2><div class="paymentTrust"><span>One-time €49</span><span>PayPal Payment Link</span><span>Professional sample available</span><span>Manual payment confirmation</span></div></div><div class="pricingGrid">
 <article class="pricingCard"><div class="eyebrow">Free</div><div class="price">€0</div><p>For initial EUDR screening and preparation.</p><ul><li>EUDR preliminary checker</li><li>CN / Product Checker</li><li>Country Risk Lookup</li><li>GeoJSON Validator</li><li>Supplier Evidence Checklist</li><li>Basic report preview & print</li></ul><a class="btn secondary full" href="/#checker">Use free tools</a></article>
 <article class="pricingCard featured"><div class="eyebrow">Professional</div><div class="price">€49 <span>one-time</span></div><p>For one company / product assessment when you need a structured report rather than only a checker result.</p><ul><li>Everything in Free</li><li>Formal cover, report ID and version</li><li>Scope & risk matrix</li><li>Preparation score + Article 9 snapshot</li><li>Priority evidence-gap analysis</li><li>30 / 60 / 90 day action plan</li><li>Official source references</li><li>Professional report delivery after payment confirmation</li></ul><a id="pricingPaypal" class="btn primary full disabledLink" href="#" target="_blank" rel="noopener">Get Professional Report — €49</a><p id="pricingStatus" class="toolDisclaimer">Secure one-time payment via PayPal. Automatic payment verification is not enabled in the current static version.</p></article>
-<article class="pricingCard"><div class="eyebrow">Enterprise</div><div class="price">Custom</div><p>For companies that need multi-product or supplier support.</p><ul><li>Multiple products / suppliers</li><li>Custom evidence review</li><li>Workflow assistance</li><li>Custom reporting</li><li>Volume requirements</li></ul><a class="btn secondary full" href="/about/">Contact / project inquiry</a></article>
+<article class="pricingCard"><div class="eyebrow">Enterprise</div><div class="price">Custom</div><p>For companies that need multi-product or supplier support.</p><ul><li>Multiple products / suppliers</li><li>Custom evidence review</li><li>Workflow assistance</li><li>Custom reporting</li><li>Volume requirements</li></ul><button id="enterpriseContact" class="btn secondary full" type="button">Contact / project inquiry</button></article>
 </div></div></section>
 <section class="section soft"><div class="wrap pricingCompare">
 <div class="sectionHead"><div class="eyebrow">What changes when you upgrade</div><h2>Free tools answer questions. Professional organizes the work.</h2></div>
@@ -38,6 +38,71 @@
 <details><summary>Can I use the free tools without paying?</summary><p>Yes. The preliminary checker, CN/Product Checker, Country Risk Lookup, GeoJSON Validator, Supplier Checklist and basic report preview remain free.</p></details>
 <details><summary>Can I preview the Professional format?</summary><p>Yes. The Professional Report sample is public so you can review the structure before purchasing.</p><p><a href="/professional-report-sample/"><b>View sample Professional report →</b></a></p></details>
 <details><summary>Is this legal advice?</summary><p>No. EUDRChecker provides compliance-support tools and reports. It does not provide legal advice or certify EUDR compliance.</p></details>
-</div></section></main>
+</div></section>
+
+<div id="enterpriseModal" class="contactModal" aria-hidden="true">
+  <div class="contactModalBackdrop" data-close-modal></div>
+  <div class="contactModalCard" role="dialog" aria-modal="true" aria-labelledby="enterpriseModalTitle">
+    <button class="contactModalClose" type="button" aria-label="Close contact form" data-close-modal>×</button>
+    <div class="eyebrow">Enterprise inquiry</div>
+    <h2 id="enterpriseModalTitle">Tell us about your EUDR project.</h2>
+    <p class="contactModalLead">For multi-product, multi-supplier or custom EUDR workflows. We will review your requirements and reply by email.</p>
+
+    <form class="enterpriseForm" action="https://formsubmit.co/cnhhryp@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="EUDRChecker Enterprise Inquiry">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://eudrchecker.com/pricing/?inquiry=sent">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="contactHoney">
+
+      <div class="contactFormGrid">
+        <label>Your name
+          <input type="text" name="Name" autocomplete="name" required placeholder="Your name">
+        </label>
+        <label>Company
+          <input type="text" name="Company" autocomplete="organization" required placeholder="Company name">
+        </label>
+        <label>Work email
+          <input type="email" name="Email" autocomplete="email" required placeholder="name@company.com">
+        </label>
+        <label>Country / region
+          <input type="text" name="Country / Region" autocomplete="country-name" placeholder="Country or region">
+        </label>
+        <label>Company role
+          <select name="Company Role" required>
+            <option value="">Select</option>
+            <option>EU importer / operator</option>
+            <option>EU exporter</option>
+            <option>Trader / downstream operator</option>
+            <option>Non-EU supplier / manufacturer</option>
+            <option>Consultant / service provider</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Estimated scope
+          <select name="Project Scope" required>
+            <option value="">Select</option>
+            <option>1–10 products / suppliers</option>
+            <option>11–50 products / suppliers</option>
+            <option>51–200 products / suppliers</option>
+            <option>200+ products / suppliers</option>
+          </select>
+        </label>
+      </div>
+
+      <label>What do you need help with?
+        <textarea name="Project Details" required placeholder="Tell us about your products, suppliers, countries, current data and the result you need."></textarea>
+      </label>
+
+      <label class="check contactConsent">
+        <input type="checkbox" required>
+        <span>I agree that the information in this form may be used to reply to my inquiry. See the <a href="/privacy/" target="_blank">Privacy Policy</a>.</span>
+      </label>
+
+      <button class="btn primary full contactSubmit" type="submit">Send Enterprise inquiry</button>
+      <p class="toolDisclaimer">Your inquiry will be sent to cnhhryp@gmail.com. Please do not include passwords, card details or other sensitive payment information.</p>
+    </form>
+  </div>
+</div>
+</main>
 <footer><div class="wrap copy">© 2026 EUDRChecker.com.</div></footer>
-<script src="/app.js"></script><script src="/payment-config.js"></script><script>const p=(window.EUDR_PAYMENT||{}).professionalReport||"";if(p){const a=document.getElementById("pricingPaypal");a.href=p;a.classList.remove("disabledLink");document.getElementById("pricingStatus").textContent="Secure payment via PayPal Payment Link."}else{document.getElementById("pricingPaypal").onclick=e=>e.preventDefault()}</script></body></html>
+<script src="/app.js"></script><script src="/payment-config.js"></script><script src="/enterprise-contact.js"></script><script>const p=(window.EUDR_PAYMENT||{}).professionalReport||"";if(p){const a=document.getElementById("pricingPaypal");a.href=p;a.classList.remove("disabledLink");document.getElementById("pricingStatus").textContent="Secure payment via PayPal Payment Link."}else{document.getElementById("pricingPaypal").onclick=e=>e.preventDefault()}</script></body></html>
