@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EUDR Report Generator | Free Preview & Professional Report</title>
+<meta name="description" content="Generate a practical EUDR screening report with product, company role, country risk, evidence checklist and next steps. Free preview and Professional report option.">
+<link rel="canonical" href="https://eudrchecker.com/report/"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css">
+</head><body>
+<header class="top"><div class="wrap nav">
+<a class="brand" href="/"><span class="logo">EC</span><span><b>EUDR</b>Checker</span></a>
+<button id="menuBtn">Menu</button>
+<nav id="nav"><a href="/#checker">Checker</a><a href="/product-checker/">CN/Product Checker</a><a href="/geojson-validator/">GeoJSON Validator</a><a href="/report/">Report</a><a href="/pricing/">Pricing</a></nav>
+</div></header>
+<main>
+<section class="hero compactHero"><div class="wrap"><div class="eyebrow">Report workflow</div><h1>EUDR Report Generator</h1><p class="lead">Turn your screening inputs into a structured EUDR action report. The free version can be viewed and printed in-browser; Professional adds a more complete downloadable report workflow.</p></div></section>
+
+<section class="section"><div class="wrap reportBuilder">
+<form id="reportForm" class="reportForm">
+<div class="formSection"><h3>Company</h3>
+<label>Company name<input id="companyName" placeholder="Example Trading GmbH" required></label>
+<label>Company role<select id="reportRole" required><option value="">Select</option><option>Operator / first placer</option><option>EU importer</option><option>EU exporter</option><option>Downstream trader</option><option>Non-EU supplier</option></select></label>
+<label>Company category<select id="reportSize" required><option value="">Select</option><option value="large">Large or medium</option><option value="small-eutr">Micro/small already covered by EUTR</option><option value="small">Other micro or small enterprise</option></select></label>
+</div>
+<div class="formSection"><h3>Product</h3>
+<label>Product description<input id="reportProduct" placeholder="e.g. roasted coffee" required></label>
+<label>CN / HS code<input id="reportCode" placeholder="e.g. 0901"></label>
+<label>Relevant commodity<select id="reportCommodity" required><option value="">Select</option><option>Cattle</option><option>Cocoa</option><option>Coffee</option><option>Oil palm</option><option>Rubber</option><option>Soy</option><option>Wood</option><option>Unsure</option></select></label>
+</div>
+<div class="formSection"><h3>Origin & evidence</h3>
+<label>Country of production<input id="reportCountry" placeholder="e.g. Brazil" required></label>
+<label>Country risk<select id="reportRisk" required><option value="">Select</option><option value="low">Low</option><option value="standard">Standard</option><option value="high">High</option><option value="unknown">Not checked</option></select></label>
+<label>Geolocation status<select id="reportGeo" required><option value="">Select</option><option>Collected and validated</option><option>Collected but not validated</option><option>Not yet collected</option><option>Not sure</option></select></label>
+<label>Supplier evidence<select id="reportEvidence" required><option value="">Select</option><option>Complete</option><option>Partially complete</option><option>Not yet collected</option></select></label>
+</div>
+<label>Notes<textarea id="reportNotes" placeholder="Optional notes about suppliers, plots, legal evidence or risk mitigation"></textarea></label>
+<button class="btn primary full" type="submit">Generate free report preview</button>
+</form>
+
+<aside class="reportSide">
+<div class="priceCard">
+<div class="eyebrow">Professional</div><div class="price">€49 <span>one-time</span></div>
+<ul><li>Expanded structured EUDR report</li><li>Product & role summary</li><li>Country-risk explanation</li><li>Evidence-gap analysis</li><li>Recommended actions</li><li>Professional PDF download workflow</li></ul>
+<a id="paypalBuy" class="btn primary full disabledLink" href="#" target="_blank" rel="noopener">Pay €49 with PayPal</a>
+<p id="paymentStatus" class="toolDisclaimer">Payment link will be activated after the PayPal Payment Link is added.</p>
+</div>
+<div class="freeCard"><b>Free report</b><p>Generate, view and print the basic report directly in your browser.</p></div>
+</aside>
+</div></section>
+
+<section class="section soft"><div class="wrap">
+<div id="reportOutput" class="reportOutput">
+<div class="empty"><b>Your report preview will appear here</b><p>Complete the form above and generate the report.</p></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap copy">© 2026 EUDRChecker.com. Preliminary screening report only; not legal advice.</div></footer>
+<script src="/app.js"></script><script src="/payment-config.js"></script><script src="/report.js"></script>
+</body></html>
