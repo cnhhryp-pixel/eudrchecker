@@ -150,3 +150,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .enterpriseForm .contactFormGrid label{margin-bottom:16px}
 .enterpriseForm>label{margin-top:4px}
 .enterpriseForm .contactHoney{display:none!important;min-height:0!important;margin:0!important;padding:0!important}
+
+/* Final unified footer navigation */
+.siteFooter{background:#071f18!important;color:#d9e8e1!important;padding:46px 0 20px!important}
+.siteFooterNav{display:grid;grid-template-columns:repeat(4,1fr);gap:54px}
+.siteFooterNav>div{display:flex;flex-direction:column;gap:7px}
+.siteFooterNav b{color:#fff;font-size:14px;margin-bottom:7px}
+.siteFooterNav a{color:#a8c1b5;font-size:13px;line-height:1.45}
+.siteFooterNav a:hover{color:#fff}
+.siteFooterBottom{display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:16px;color:#87a196;font-size:12px}
+.siteFooterLegal{display:flex;gap:16px}
+.siteFooterLegal a{color:#8fa99d}
+.siteFooterLegal a:hover{color:#fff}
+@media(max-width:900px){.siteFooterNav{grid-template-columns:1fr 1fr;gap:32px 42px}}
+@media(max-width:560px){.siteFooterNav{grid-template-columns:1fr;gap:26px}.siteFooterBottom{flex-direction:column;align-items:flex-start}}
+@media print{.siteFooter{display:none!important}}
