@@ -96,11 +96,12 @@
         '<a href="/professional-report-sample/">Professional Sample</a>'+
         '<a href="/pricing/">Pricing</a>'+
         '<a href="/about/">About EUDRChecker</a>'+
+        '<a href="mailto:sales@eudrchecker.com?subject=EUDRChecker%20Inquiry">Email support: sales@eudrchecker.com</a>'+
       '</div>'+
     '</div>'+
     '<div class="wrap siteFooterBottom">'+
       '<span>© 2026 EUDRChecker.com. Preliminary validation only.</span>'+
-      '<span class="siteFooterLegal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></span>'+
+      '<span class="siteFooterLegal"><a href="mailto:sales@eudrchecker.com">Contact us</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></span>'+
     '</div>';
 })();
 ;window.FOOTER_BUILD_20260927_2=true;
